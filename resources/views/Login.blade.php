@@ -1,7 +1,11 @@
 @extends('layout.main')
 
+@section('judul')
+    Login
+@endsection
 @section('isi')
 <h1><center>Login Form</center></h1>
+<br>
 <form>
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
