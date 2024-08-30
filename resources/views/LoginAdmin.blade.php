@@ -1,0 +1,22 @@
+@extends('layout.main')
+
+@section('judul')
+    Login
+@endsection
+@section('isi')
+<h1><center>Login Admin</center></h1>
+<br>
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+@endsection
