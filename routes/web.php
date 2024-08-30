@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,10 @@ Route::get('/login',function(){
 
 Route::get('/loginadmin',function(){
     return view('LoginAdmin');
+});
+
+//user controller untuk CRUD USER
+Route::controller(UsersController::class)->group(function(){
+    route::post('/LogAdmin','LoginUser');
+
 });
