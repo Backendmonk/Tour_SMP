@@ -29,5 +29,6 @@ Route::get('/loginadmin',function(){
 //user controller untuk CRUD USER
 Route::controller(UsersController::class)->group(function(){
     route::post('/LogAdmin','LoginUser');
+    route::get('/daftaradmin','daftarAdmin');
 
 });
