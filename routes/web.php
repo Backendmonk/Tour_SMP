@@ -26,9 +26,16 @@ Route::get('/loginadmin',function(){
     return view('LoginAdmin');
 });
 
+Route::get('/AdminHome',function(){
+    return view('Admin.index');
+});
+
+
+
 //user controller untuk CRUD USER
 Route::controller(UsersController::class)->group(function(){
     route::post('/LogAdmin','LoginUser');
     route::get('/daftaradmin','daftarAdmin');
+    route::get('/logout','Logout');
 
 });

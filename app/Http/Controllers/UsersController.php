@@ -29,7 +29,9 @@ class UsersController extends Controller
 
     if (Auth::attempt($infLog)) {
         if (Auth::user()->role=='Admin') {
-            echo "Hallo Admin";
+            
+            return redirect('/AdminHome');
+           
         }elseif (Auth::user()->role=='Umum') {
             return redirect('/');
         }
@@ -43,5 +45,12 @@ class UsersController extends Controller
     public function daftarAdmin(){
 
         return view('DaftarAdmin');
+    }
+
+
+    public function Logout(){
+
+        Auth::logout();
+        return redirect('/');
     }
 }
