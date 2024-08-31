@@ -30,8 +30,8 @@ class UsersController extends Controller
     if (Auth::attempt($infLog)) {
         if (Auth::user()->role=='Admin') {
             echo "Hallo Admin";
-        }elseif (Auth::user()->role=="Umum") {
-            echo "Halo Umum";
+        }elseif (Auth::user()->role=='Umum') {
+            return redirect('/');
         }
     }else {
         echo "username password salah";

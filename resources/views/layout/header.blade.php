@@ -65,7 +65,12 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="/login">Login</a>
+
+    
+      @include('layout.headerLog')
+       
+              
+      
 
     </div>
   </header>
