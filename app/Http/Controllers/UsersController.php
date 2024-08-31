@@ -38,4 +38,10 @@ class UsersController extends Controller
     }
 
     }
+
+
+    public function daftarAdmin(){
+
+        return view('DaftarAdmin');
+    }
 }
