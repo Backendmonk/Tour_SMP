@@ -4,7 +4,7 @@
     Login
 @endsection
 @section('isi')
-<h1><center>Login Admin</center></h1>
+<h1><center>Daftar</center></h1>
 <br>
 <form method="POST" action="/adduserumum">
   @csrf
