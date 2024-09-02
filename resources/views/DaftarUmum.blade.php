@@ -6,7 +6,7 @@
 @section('isi')
 <h1><center>Login Admin</center></h1>
 <br>
-<form method="POST" action="/addAdmin">
+<form method="POST" action="/adduserumum">
   @csrf
 
   <div class="form-group">
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Role</label>
-        <input type="text" required readonly name = "role" Value="Admin" class="form-control" id="exampleInputPassword1">
+        <input type="text" required readonly name = "role" Value="Umum" class="form-control" id="exampleInputPassword1">
       </div>
   
 

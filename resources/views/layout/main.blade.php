@@ -1,6 +1,7 @@
 
 @include('layout.header')
   <main class="main">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">

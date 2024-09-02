@@ -31,13 +31,22 @@ Route::get('/AdminHome',function(){
     return view('Admin.index');
 });
 
+Route::get('/TourSekolah',function(){
+    return view('UserUmum.Tour');
+});
+
 
 
 //user controller untuk CRUD USER
 Route::controller(UsersController::class)->group(function(){
-    route::post('/LogAdmin','LoginUser');
+    route::post('/LogAdmin','LoginUserAdm');
+    route::post('/LogUmum','LoginUserUmum');
     route::get('/daftaradmin','daftarAdmin');
+    route::get('/daftaruserUm','daftaruserUmum');
     route::get('/logout','Logout');
+    route::Post('/addAdmin','TambahAdmin');
+    route::Post('/adduserumum','TambahuserUM');
+  
 
 });
 

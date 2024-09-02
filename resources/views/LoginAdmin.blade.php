@@ -6,6 +6,43 @@
 @section('isi')
 <h1><center>Login Admin</center></h1>
 <br>
+
+
+<!-- error alert-->
+@if (session()->has('error'))
+  
+    <script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Akun Tidak Ditemukan",
+                        footer:"Cek Kembali Username dan Password"
+                        
+                    });
+
+    </script>
+      
+  @endif
+
+
+
+  @if (session()->has('suksesdaftar'))
+  
+    <script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Berhasil !",
+                        text: "Akun Terdaftar",
+                        footer:"Silahkan Login"
+                        
+                    });
+
+    </script>
+      
+  @endif
+
+  <!-- End Error Alert-->
+
 <form method="POST" action="/LogAdmin">
   @csrf
     <div class="form-group">

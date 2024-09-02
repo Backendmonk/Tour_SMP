@@ -1,6 +1,6 @@
 @extends('LayoutAdm.main')
 @section('judul')
-    Home
+    <title>Home</title>
 @endsection
 @section('isi')
     <h1>KJAlkjlskadjalsk</h1>
