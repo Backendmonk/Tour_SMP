@@ -60,14 +60,25 @@
         
             </ul>
           </li>
-          <li><a href="index.html#contact">Games</a></li>
+          @guest
+          <li><a href="/login">Games</a></li>
+              @else
+
+              <li><a href="/gamesview">Games</a></li>
+          @endguest
+        
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
    
-    
+        @guest
+            
       @include('layout.headerLog')
+        @else
+        @include('layout.headerLogADM')
+        @endguest
+    
        
               
       

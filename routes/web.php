@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserUmumController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,4 +39,11 @@ Route::controller(UsersController::class)->group(function(){
     route::get('/daftaradmin','daftarAdmin');
     route::get('/logout','Logout');
 
+});
+
+
+//user umum 
+
+route::controller(UserUmumController::class)->group(function(){
+        route::get('/gamesview','GamesView');
 });

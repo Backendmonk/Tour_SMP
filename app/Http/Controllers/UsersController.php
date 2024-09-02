@@ -33,7 +33,7 @@ class UsersController extends Controller
             return redirect('/AdminHome');
            
         }elseif (Auth::user()->role=='Umum') {
-            return redirect('/');
+            return view('welcome');
         }
     }else {
         echo "username password salah";
