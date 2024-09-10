@@ -66,5 +66,6 @@ route::controller(UserAdminController::class)->group(function(){
     route::get('/editpr_View','ViewEditPr');
     route::post('/UpdatedataAdmin','AdminUpdate');
     route::get('/games','GamesView');
+    route::get('/readingAdd','readingView');
 
 });
