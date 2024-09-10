@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserAdminController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UserUmumController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +47,7 @@ Route::controller(UsersController::class)->group(function(){
     route::get('/logout','Logout');
     route::Post('/addAdmin','TambahAdmin');
     route::Post('/adduserumum','TambahuserUM');
+ 
   
 
 });
@@ -55,4 +57,14 @@ Route::controller(UsersController::class)->group(function(){
 
 route::controller(UserUmumController::class)->group(function(){
         route::get('/gamesview','GamesView');
+});
+
+
+//user admin
+
+route::controller(UserAdminController::class)->group(function(){
+    route::get('/editpr_View','ViewEditPr');
+    route::post('/UpdatedataAdmin','AdminUpdate');
+    route::get('/games','GamesView');
+
 });

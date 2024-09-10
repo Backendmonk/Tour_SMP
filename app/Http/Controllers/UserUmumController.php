@@ -11,5 +11,6 @@ class UserUmumController extends Controller
     public function GamesView(){
 
         return view('UserUmum.GamesView');
+        
     }
 }
