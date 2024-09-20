@@ -54,4 +54,9 @@ class UserAdminController extends Controller
         }
     }
 
+    public function TambahSoalMembaca(){
+
+        return view('Admin.ReadingAdd');
+    }
+
 }

@@ -67,5 +67,5 @@ route::controller(UserAdminController::class)->group(function(){
     route::post('/UpdatedataAdmin','AdminUpdate');
     route::get('/games','GamesView');
     route::get('/readingAdd','readingView');
-
+    route::get('/readingAdd','TambahSoalMembaca');
 });
