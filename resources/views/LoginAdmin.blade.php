@@ -25,7 +25,6 @@
   @endif
 
 
-
   @if (session()->has('suksesdaftar'))
   
     <script>
