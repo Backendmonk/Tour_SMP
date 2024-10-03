@@ -12,6 +12,11 @@
         <div class="d-flex flex-column justify-content-center align-items-center">
          @yield('isi')
         </div>
+
+
+        <div class="d-flex flex-column justify-content-right align-items-right">
+          @yield('isigame')
+         </div>
             
     </section><!-- /Contact Section -->
 

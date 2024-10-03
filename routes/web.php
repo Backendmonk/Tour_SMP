@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserAdminController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\UserUmumController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,10 +29,6 @@ Route::get('/loginadmin',function(){
     return view('LoginAdmin');
 });
 
-Route::get('/AdminHome',function(){
-    return view('Admin.index');
-});
-
 Route::get('/TourSekolah',function(){
     return view('UserUmum.Tour');
 });
@@ -55,17 +52,24 @@ Route::controller(UsersController::class)->group(function(){
 
 //user umum 
 
-route::controller(UserUmumController::class)->group(function(){
+route::controller(UserUmumController::class)->middleware('userakses:Umum')->group(function(){
         route::get('/gamesview','GamesView');
+        route::get('/gamestart','GameStart');
+        route::post('/sumbitJawaban','SumbmitJawaban');
 });
 
 
 //user admin
 
-route::controller(UserAdminController::class)->group(function(){
+
+//route group -> middleware (akses:Jabatan) -> group Fungsi
+route::controller(UserAdminController::class)->middleware('Aksesadmin:Admin')->group(function(){
     route::get('/editpr_View','ViewEditPr');
+    route::get('/AdminHome','AdminHome');
     route::post('/UpdatedataAdmin','AdminUpdate');
     route::get('/games','GamesView');
     route::get('/readingAdd','readingView');
     route::get('/readingAdd','TambahSoalMembaca');
+    route::post('/readingsoalAdd','readingadd');    
 });
+

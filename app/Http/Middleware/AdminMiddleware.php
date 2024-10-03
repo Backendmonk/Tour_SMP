@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class Userakses
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,8 +17,7 @@ class Userakses
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        
-        
+
         if (!Auth::check()) {
            
             return redirect('/loginadmin');
@@ -27,11 +26,12 @@ class Userakses
         if (auth()->user()->role == $role) {
             # code...
             return $next($request);
-        }
+        }   
 
-        return redirect('');
+        return redirect(' ');
 
 
-        
+
+
     }
 }

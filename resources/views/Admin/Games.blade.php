@@ -16,7 +16,7 @@
                 Swal.fire({
                     icon: "success",
                     title: "Berhasil !",
-                    text: "Akun Terupdate"
+                    text: "Soal Berhasil ditambah"
                     
                     
                 });
@@ -30,7 +30,11 @@
                 <div class="col-xl-5 col-md-8">
                     <div class="card bg-primary text-white mb-4">
                         <div class="card-body">Soal Mendengarkan</div>
-                        <div class="card-body">{{$JmlSoalLS}}</div>
+                        <div class="card-body">@if ($JmlSoalLS < 1)
+                            {{0}}
+                        @else
+                            {{$JmlSoalLS}}
+                        @endif</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="/listeningAdd">Tambah Soal</a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -40,7 +44,13 @@
                 <div class="col-xl-5 col-md-8">
                     <div class="card bg-warning text-white mb-4">
                         <div class="card-body">Soal Membaca</div>
-                        <div class="card-body">{{$JmlSoalRD}}</div>
+                        <div class="card-body">
+                                @if ($JmlSoalRD < 1)
+                                    {{0}}
+                                @else
+                                {{$JmlSoalRD}}
+                                @endif
+                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
                             <a class="small text-white stretched-link" href="/readingAdd">Tambah Soal</a>
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -66,6 +76,17 @@
                             </thead>
                             
                             <tbody>
+
+                                @foreach ($DataSoal as $soal)
+
+                                <tr>
+                                    <th>{{$soal->id}}</th>
+                                    <th>{{$soal->soal}}</th>
+                                    <th>{{$soal->jenis_soal}}</th>
+                                    <th><button type="submit" class="btn btn-primary">Edit</button></th>
+                                </tr>
+                                    
+                                @endforeach
                              
                                 
                             </tbody>
