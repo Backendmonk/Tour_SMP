@@ -30,9 +30,40 @@ class UserUmumController extends Controller
 
     public function SumbmitJawaban(Request $reqjawaban){
 
-                $jawabanA = $reqjawaban->input('jawaban');
+                    //array dipanggil dengan perintah input->('nama array')
+                $jawaban = $reqjawaban->input('jawaban');
+              
+                $jumlahbenar  = 0;
+                $jumlahsoal = count($jawaban);
+                
+                    //cari id soal dari array dimana jawabanA adalah variable yang membawa array dan disini array akan dipisahkan dari indexnya $id sebagai index => $terpilih menjadi varibale untuk isi
 
+                    //contoh pada array ada 1=>'9' maka id adalah 1 dan terpilih adalah 9
+                    //untuk memudahkan pengecekan dan pembandingan
+              foreach ($jawaban as $id => $jawaban_terpilih) {
+                # code...
 
+                $soal = Soal::find($id);
+                
+
+                //cek apakah jawaban ayng dipilih sama dengan jawaban yang benar tergantung dari id yang dibawa
+                if ($soal && $jawaban_terpilih == $soal->JawabanBenar) {
+                    # code...
+                    
+                    $jumlahbenar++;
+                }
+
+            
+              }
+
+              $total = ($jumlahbenar/$jumlahsoal)*100;
+              $hasilAkhir = floor($total);
+
+              echo $hasilAkhir;
+
+            
+
+             
                 /// bandingkan
 
     }

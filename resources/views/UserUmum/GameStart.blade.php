@@ -19,27 +19,33 @@
         @csrf
         <div class="form-group">
         <label for="soal{{$item->id}}"> <b>{{$i}}.{{$item->soal}}</b></label>
+        
        
+                <!-----
+                            pmbuatan name akan dilakukan dengan menggunakan array dimanana nantiya satu array yaitu jawaban[] akan membawa seluruh jawaban kedaman controller
 
+                            array digunakan karena adanya perulangan pada soal
+                    ---->
 
         <div class="custom-control custom-radio">
-            <input required="true" type="radio" id="jawabanA_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input" Value ="A">
+            
+            <input required="true" type="radio" id="jawabanA_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input" Value ="a">
             <label class="custom-control-label" for="jawabanA_{{$item->id}}"  >A. {{$item->Jawaban_A}}</label>
           </div>
 
 
           <div class="custom-control custom-radio">
-            <input required="true" type="radio" id="jawabanB_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input"  Value ="B">
+            <input required="true" type="radio" id="jawabanB_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input"  Value ="b">
             <label class="custom-control-label" for="jawabanB_{{$item->id}}">B. {{$item->Jawaban_B}}</label>
           </div>
 
           <div class="custom-control custom-radio">
-            <input required="true" type="radio" id="jawabanC_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input"  Value ="C">
+            <input required="true" type="radio" id="jawabanC_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input"  Value ="c">
             <label class="custom-control-label" for="jawabanC_{{$item->id}}">C. {{$item->Jawaban_C}}</label>
           </div>
 
           <div class="custom-control custom-radio">
-            <input  required="true" type="radio" id="jawabanD_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input" Value ="D">
+            <input  required="true" type="radio" id="jawabanD_{{$item->id}}" name="jawaban[{{$item->id}}]" class="custom-control-input" Value ="d">
             <label class="custom-control-label" for="jawabanD_{{$item->id}}" >D. {{$item->Jawaban_D}}</label>
           </div>
 
