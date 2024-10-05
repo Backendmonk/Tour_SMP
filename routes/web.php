@@ -70,6 +70,8 @@ route::controller(UserAdminController::class)->middleware('Aksesadmin:Admin')->g
     route::get('/games','GamesView');
     route::get('/readingAdd','readingView');
     route::get('/readingAdd','TambahSoalMembaca');
-    route::post('/readingsoalAdd','readingadd');    
+    route::post('/readingsoalAdd','readingadd');  
+    route::get('/listeningAdd','listeningview');  
+    route::post('/listeningsoalAdd','listeningadd');
 });
 

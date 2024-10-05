@@ -25,7 +25,10 @@
                             pmbuatan name akan dilakukan dengan menggunakan array dimanana nantiya satu array yaitu jawaban[] akan membawa seluruh jawaban kedaman controller
 
                             array digunakan karena adanya perulangan pada soal
-                    ---->
+
+                            name ="jawaban"
+
+                            tipe data name akan berupa array                    ---->
 
         <div class="custom-control custom-radio">
             

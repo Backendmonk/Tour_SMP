@@ -22,6 +22,7 @@ class UserUmumController extends Controller
         $datagame = [
 
             'listSoal'=>Soal::all()
+            //inRandomOrder()->limit(3)->get()
         ];
 
         return view('UserUmum.GameStart',$datagame);
@@ -40,12 +41,11 @@ class UserUmumController extends Controller
 
                     //contoh pada array ada 1=>'9' maka id adalah 1 dan terpilih adalah 9
                     //untuk memudahkan pengecekan dan pembandingan
-              foreach ($jawaban as $id => $jawaban_terpilih) {
-                # code...
 
+                    //DIGUNAKAN KETIKA INPUT YANG DITERIMA BERIPA ARRAY
+              foreach ($jawaban as $id => $jawaban_terpilih) {
                 $soal = Soal::find($id);
                 
-
                 //cek apakah jawaban ayng dipilih sama dengan jawaban yang benar tergantung dari id yang dibawa
                 if ($soal && $jawaban_terpilih == $soal->JawabanBenar) {
                     # code...

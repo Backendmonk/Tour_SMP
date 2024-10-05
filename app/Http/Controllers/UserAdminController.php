@@ -106,4 +106,21 @@ class UserAdminController extends Controller
         }
     }
 
+
+    public function listeningview(){
+
+        return view('Admin.ListeningAdd');
+    }
+
+
+    public function listeningadd(Request $reqlistening){
+
+        $reqlistening->validate([
+
+                'audio'=>'required|mimes:mp3,wav,ogg|max:10240',
+        ]);
+
+
+    }
+
 }
