@@ -115,10 +115,17 @@ class UserAdminController extends Controller
 
     public function listeningadd(Request $reqlistening){
 
+        //tambah ke table untuk halaman pathnya
+        
+
         $reqlistening->validate([
 
                 'audio'=>'required|mimes:mp3,wav,ogg|max:10240',
         ]);
+
+        if ($reqlistening->file('audio')) {
+            # code...
+        }
 
 
     }
