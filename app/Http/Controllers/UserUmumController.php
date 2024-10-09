@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\hasil_soal;
 use App\Models\Soal;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,7 +67,7 @@ class UserUmumController extends Controller
                     $id = Auth::user()->id;
                     $email = Auth::user()->email;
                     $nama = Auth::user()->name;
-                    $tanggal = date('Y-m-d');
+                    $tanggal = Carbon::now();
 
 
 
