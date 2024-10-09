@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\hasil_soal;
 use App\Models\Soal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -66,7 +67,32 @@ class UserUmumController extends Controller
                     $email = Auth::user()->email;
                     $nama = Auth::user()->name;
                     $tanggal = date('Y-m-d');
-                    
+
+
+
+                    try {
+                        //code...
+
+                        $pushTo_HasilSoal = new hasil_soal;
+                        
+
+                        $pushTo_HasilSoal->id_user = $id;
+                        $pushTo_HasilSoal->email = $email;
+                        $pushTo_HasilSoal->nama_user = $nama;
+                        $pushTo_HasilSoal->score = $hasilAkhir;
+                        $pushTo_HasilSoal->tgl_main =$tanggal;
+
+
+                        $pushTo_HasilSoal->save();
+
+
+                       
+
+
+                    } catch (\Throwable $th) {
+                        //throw $th;
+                    }
+                        
                     
                     
 
