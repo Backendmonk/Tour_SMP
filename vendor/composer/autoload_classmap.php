@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Soal' => $baseDir . '/app/Models/Soal.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\hasil_soal' => $baseDir . '/app/Models/hasil_soal.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

@@ -62,6 +62,10 @@ class UserUmumController extends Controller
               $total = ($jumlahbenar/$jumlahsoal)*100;
               $hasilAkhir = floor($total);
 
+              $pushtoview = [
+                'score' =>$hasilAkhir
+              ];
+
                 ///up to hasil
 
                     $id = Auth::user()->id;
@@ -87,20 +91,15 @@ class UserUmumController extends Controller
                         $pushTo_HasilSoal->save();
 
 
-                       
-
+                        return view('UserUmum.HasilScore',$pushtoview);
 
                     } catch (\Throwable $th) {
                         //throw $th;
                     }
                         
                     
-                    
+        }
 
-            
 
-             
-                /// bandingkan
 
-    }
 }
