@@ -10,6 +10,7 @@
 
 
 
+
 @if (session()->has('berhasil'))
   
 <script>
@@ -25,6 +26,22 @@
   
 @endif
 
+
+
+@if ($errors->any())
+    
+          <script>
+            Swal.fire({
+                icon: "error",
+                title: "Gagal!",
+                text: "Adanya Kesalahan, Cek Kembali!"
+                
+                
+            });
+
+</script>
+@endif
+
 <form method="POST" action="/listeningsoalAdd" enctype="multipart/form-data">
   @csrf
   <div class="form-group">
@@ -36,7 +53,7 @@
 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Audio</label>
-    <input type="file" class="form-control" placeholder="Audio File" id="exampleFormControlInput1" name = "audio" accept="audio/*" required>
+    <input type="file" class="form-control" placeholder="Audio File" id="exampleFormControlInput1" name = "audio" required>
 
   </div>
 
@@ -44,7 +61,7 @@
 
     <div class="form-group">
       
-        <input hidden  type="text" class="form-control" id="exampleFormControlInput1" name = "jenis_soal" value="reading">
+        <input hidden  type="text" class="form-control" id="exampleFormControlInput1" name = "jenis_soal" value="listening">
       </div>
             
       <div class="form-group">

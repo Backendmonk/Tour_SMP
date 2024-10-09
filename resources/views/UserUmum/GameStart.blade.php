@@ -18,7 +18,23 @@
         
         @csrf
         <div class="form-group">
+
+
+        
+          
+
         <label for="soal{{$item->id}}"> <b>{{$i}}.{{$item->soal}}</b></label>
+
+        <br>
+
+        
+        @if ($item->jenis_soal =="listening")
+        <audio controls>
+
+      <source src="{{asset($item->path) }}" type="audio/mpeg">
+      Your browser does not support the audio element.
+  </audio>
+    @endif
         
        
                 <!-----

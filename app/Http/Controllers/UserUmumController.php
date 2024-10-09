@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Soal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserUmumController extends Controller
 {
@@ -21,7 +22,7 @@ class UserUmumController extends Controller
 
         $datagame = [
 
-            'listSoal'=>Soal::all()
+            'listSoal'=>Soal::inRandomOrder()->get()
             //inRandomOrder()->limit(3)->get()
         ];
 
@@ -59,7 +60,15 @@ class UserUmumController extends Controller
               $total = ($jumlahbenar/$jumlahsoal)*100;
               $hasilAkhir = floor($total);
 
-              echo $hasilAkhir;
+                ///up to hasil
+
+                    $id = Auth::user()->id;
+                    $email = Auth::user()->email;
+                    $nama = Auth::user()->name;
+                    $tanggal = date('Y-m-d');
+                    
+                    
+                    
 
             
 

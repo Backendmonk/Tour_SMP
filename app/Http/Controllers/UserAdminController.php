@@ -78,6 +78,7 @@ class UserAdminController extends Controller
 
         $jbtr = $reqdatasoal->jbTr;
         $file = NULL;
+        $path = NULL;
 
 
         try {
@@ -92,6 +93,7 @@ class UserAdminController extends Controller
             $addSoal->Jawaban_C = $jbC;
             $addSoal->Jawaban_D = $jbD;
             $addSoal->JawabanBenar =$jbtr;
+            $addSoal->path = $path;
 
 
             $addSoal->save();
@@ -116,15 +118,69 @@ class UserAdminController extends Controller
     public function listeningadd(Request $reqlistening){
 
         //tambah ke table untuk halaman pathnya
-        
+       
 
         $reqlistening->validate([
 
-                'audio'=>'required|mimes:mp3,wav,ogg|max:10240',
+                'audio' => 'required|mimes:mp3,wav,ogg,m4a|max:10240'
+
+                //validasi file, dan ketika error akan langsung di handle oleh erros
         ]);
 
         if ($reqlistening->file('audio')) {
-            # code...
+
+                //buat audio name agar tidak sama dengan menggabungkan waktu, dan nama audio 
+            $audioname = time().'_'.$reqlistening->file('audio')->getClientOriginalName();
+
+
+            // buat destinasi absolut ke PUBLIC
+            $destinationpath = public_path('uploads/audio');
+
+                //ambil file audio dan pindahkan ke detinasi yang sudah dibuat
+            $reqlistening->file('audio')->move($destinationpath,$audioname);
+
+            //audio path pada database
+            $audiopath = 'uploads/audio/'.$audioname;
+
+            $soal = $reqlistening->soal;
+            $jenissoal = $reqlistening->jenis_soal;
+            $jbA = $reqlistening->jbA;
+            $jbB= $reqlistening->jbB;
+            $jbC= $reqlistening->jbC;
+            $jbD= $reqlistening->jbD;
+    
+            $jbtr = $reqlistening->jbTr;
+
+
+
+
+            try {
+                //code..
+                $uptoDb = new Soal;
+                $uptoDb ->soal = $soal;
+                $uptoDb ->jenis_soal = $jenissoal;
+                $uptoDb ->file = $audioname;
+                $uptoDb->path = $audiopath;
+                $uptoDb->Jawaban_A = $jbA;
+                $uptoDb->Jawaban_B = $jbB;
+                $uptoDb->Jawaban_C = $jbC;
+                $uptoDb->Jawaban_D = $jbD;
+                $uptoDb->JawabanBenar =$jbtr;
+
+
+                $uptoDb->save();
+
+                return redirect('games')->with('berhasil',"");
+
+
+            } catch (\Throwable $th) {
+                //throw $th;
+            }        
+
+        }else{
+            return redirect('listeningAdd')->with('AudioErr',"");
+
+
         }
 
 
