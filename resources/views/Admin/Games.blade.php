@@ -71,7 +71,8 @@
                                     <th>ID</th>
                                     <th>Soal</th>
                                     <th>Jenis Soal</th>
-                                    <th>Akses</th>
+                                    <th>Edit</th>
+                                    <th>Hapus</th>
                                 </tr>
                             </thead>
                             
@@ -83,7 +84,24 @@
                                     <th>{{$soal->id}}</th>
                                     <th>{{$soal->soal}}</th>
                                     <th>{{$soal->jenis_soal}}</th>
-                                    <th><button type="submit" class="btn btn-primary">Edit</button></th>
+                                    <!-- Edit-->
+
+                                    <form action="/editsoal" method="POST">
+                                        @csrf
+
+                                        <th><button type="submit" class="btn btn-primary">Edit</button></th>
+
+                                    </form>
+                                    
+                                    <form action="/hapusSoal" method="POST">
+                                        @csrf
+
+                                        <input type="text" hidden value = "{{$soal->id}}">
+                                        <input type="text" hidden value = "{{$soal->path}}">
+                                        <th><button type="submit" class="btn btn-warning">Hapus</button></th>
+                                        
+                                    </form>
+                                    
                                 </tr>
                                     
                                 @endforeach
