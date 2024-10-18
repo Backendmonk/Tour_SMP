@@ -18,23 +18,47 @@
         
         @csrf
         <div class="form-group">
-
+          @if ($item->jenis_soal =="listening")
+          <audio id = "audioPlayer"  controls>
+  
+        <source  src="{{asset($item->path) }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>  
+  
+        <script>
+  
+                      var audio = document.getElementById('audioPlayer');
+  
+                      audio.addEventListener('play', function() {
+                        if (audio.played.length > 0) {
+                              Swal.fire({
+                              icon: "WARNING",
+                              title: "Hanya Sekali",
+                              text: "Audio Hanya Bisa Diputar Sekali"
+                            
+                          
+                      });
+                          audio.pause();  // Hentikan audio
+                          audio.currentTime = 0;  // Reset posisi audio ke awal
+                        }
+                      });
+  
+                      audio.addEventListener('ended', function() {
+                        audio.controls = false;  // Nonaktifkan kontrol setelah audio selesai
+                      });
+  
+        </script>
+      @endif
 
         
-          
+      <br>
 
         <label for="soal{{$item->id}}"> <b>{{$i}}.{{$item->soal}}</b></label>
 
-        <br>
+   
 
         
-        @if ($item->jenis_soal =="listening")
-        <audio controls>
-
-      <source src="{{asset($item->path) }}" type="audio/mpeg">
-      Your browser does not support the audio element.
-  </audio>
-    @endif
+      
         
        
                 <!-----

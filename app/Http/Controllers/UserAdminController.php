@@ -186,4 +186,46 @@ class UserAdminController extends Controller
 
     }
 
+
+
+
+    
+    public function DeleteSoal(Request $reqdelete){
+
+        $path = $reqdelete->path;
+        $id = $reqdelete->id_soal;
+
+        $soal = Soal::find($id);
+        $filepath = public_path($path);
+        $filpathNULL = public_path();
+        
+
+
+        if (file_exists($filepath)) {
+
+                if ($filepath==$filpathNULL) {
+                    $soal->delete();
+                }else{
+                    unlink($filepath);
+                    $soal->delete();
+                }
+             
+        return redirect('/games')->with('berhasilHapus','');
+        } 
+        
+        elseif (!file_exists($filepath)) {
+            $soal->delete();
+            return redirect('/games')->with('berhasilHapus','');
+        }
+
+        else{
+         
+            return redirect('/games')->with('Gagal','');
+        }
+
+        
+
+        
+    }
+
 }

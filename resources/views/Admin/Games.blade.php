@@ -26,6 +26,41 @@
 @endif
 
 
+@if (session()->has('berhasilHapus'))
+  
+<script>
+                Swal.fire({
+                    icon: "success",
+                    title: "Berhasil !",
+                    text: "Soal Berhasil dihapus"
+                    
+                    
+                });
+
+</script>
+  
+@endif
+
+
+
+
+@if (session()->has('Gagal'))
+  
+<script>
+                Swal.fire({
+                    icon: "error",
+                    title: "Gagal!",
+                    text: "Soal Gagal Terhapus"
+                    
+                    
+                });
+
+</script>
+  
+@endif
+
+
+
             <div class="row">
                 <div class="col-xl-5 col-md-8">
                     <div class="card bg-primary text-white mb-4">
@@ -41,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 col-md-8">
+                {{-- <div class="col-xl-5 col-md-8">
                     <div class="card bg-warning text-white mb-4">
                         <div class="card-body">Soal Membaca</div>
                         <div class="card-body">
@@ -56,7 +91,7 @@
                             <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
                 <div class="card mb-4">
@@ -85,23 +120,27 @@
                                     <th>{{$soal->soal}}</th>
                                     <th>{{$soal->jenis_soal}}</th>
                                     <!-- Edit-->
+                                    <th>
+                                        <form action="/editsoal" method="POST">
+                                            @csrf
 
-                                    <form action="/editsoal" method="POST">
-                                        @csrf
+                                            <button type="submit" class="btn btn-primary">Edit</button>
 
-                                        <th><button type="submit" class="btn btn-primary">Edit</button></th>
+                                        </form>
 
-                                    </form>
-                                    
+                                    </th>
+
+
+                                        <th>  
                                     <form action="/hapusSoal" method="POST">
                                         @csrf
 
-                                        <input type="text" hidden value = "{{$soal->id}}">
-                                        <input type="text" hidden value = "{{$soal->path}}">
-                                        <th><button type="submit" class="btn btn-warning">Hapus</button></th>
+                                        <input type="text" name = "id_soal" hidden value = "{{$soal->id}}">
+                                        <input type="text"name = "path" hidden value = "{{$soal->path}}">
+                                       <button type="submit" class="btn btn-danger">Hapus</button>
                                         
                                     </form>
-                                    
+                                </th>
                                 </tr>
                                     
                                 @endforeach
