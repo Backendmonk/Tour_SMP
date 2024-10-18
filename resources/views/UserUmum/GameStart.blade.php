@@ -3,7 +3,7 @@
  Games
 @endsection
 @section('isigame')
-    <h1><center>SOAL MENGENAI SEKOLAH</center></h1>
+ <h1><center>SOAL MENGENAI SEKOLAH</center></h1>
 
     @php
         $i = 0;
