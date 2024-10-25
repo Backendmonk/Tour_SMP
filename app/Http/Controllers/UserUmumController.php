@@ -101,5 +101,21 @@ class UserUmumController extends Controller
         }
 
 
+            public function HasilScoreRekap(){
+
+               $id = Auth::user()->id;
+
+
+               $SoalData = [
+
+                    'soal'=> hasil_soal::where('id_user','=',$id)->get(),
+               ];
+
+
+
+               
+               return view('UserUmum.HasilSoal',$SoalData);
+            }
+
 
 }
