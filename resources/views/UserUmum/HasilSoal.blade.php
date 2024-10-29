@@ -7,7 +7,7 @@
 <br>
 
 <br>
-<h1>Data Hasi  Soal</h1>
+<h1>Data Hasil  Soal</h1>
 
 
 
@@ -57,8 +57,41 @@
                 });
 
 </script>
+
   
 @endif
 
-               
+
+<br><br>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">NAMA</th>
+        <th scope="col">SCORE</th>
+        <th scope="col">TGL MAIN</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+     
+
+        @foreach ($soal as $item)
+        <tr>
+            <TD>{{$item->nama_user}}</TD>
+            <td>{{$item->score}}</td>
+            <td>{{$item->tgl_main}}</td>
+        </tr>
+    
+            @endforeach
+
+        
+    
+     
+    </tbody>
+  </table>
+
+
+     
 @endsection

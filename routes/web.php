@@ -56,7 +56,7 @@ route::controller(UserUmumController::class)->middleware('userakses:Umum')->grou
         route::get('/gamesview','GamesView');
         route::get('/gamestart','GameStart');
         route::post('/sumbitJawaban','SumbmitJawaban');
-        route::get('/HasilScore','HasilScoreRekap');
+        route::get('/HasilSoal','HasilScoreRekap');
 });
 
 
