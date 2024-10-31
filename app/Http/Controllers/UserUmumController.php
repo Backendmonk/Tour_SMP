@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class UserUmumController extends Controller
 {
     //
+    
 
+   
     public function GamesView(){
 
         return view('UserUmum.GamesView');

@@ -12,14 +12,14 @@
     @php
         $i++;
     @endphp
-<br>
+<br>     
 <h3>
     <form method="POST" action="/sumbitJawaban">
         
         @csrf
         <div class="form-group">
           @if ($item->jenis_soal =="listening")
-          <audio id = "audioPlayer"  controls>
+          <audio class="audioPlayer" id = "audioPlayer"  controls>
   
         <source  src="{{asset($item->path) }}" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -27,25 +27,27 @@
   
         <script>
   
-                      var audio = document.getElementById('audioPlayer');
-  
-                      audio.addEventListener('play', function() {
-                        if (audio.played.length > 0) {
-                              Swal.fire({
-                              icon: "WARNING",
-                              title: "Hanya Sekali",
-                              text: "Audio Hanya Bisa Diputar Sekali"
-                            
-                          
-                      });
-                          audio.pause();  // Hentikan audio
-                          audio.currentTime = 0;  // Reset posisi audio ke awal
-                        }
-                      });
-  
-                      audio.addEventListener('ended', function() {
-                        audio.controls = false;  // Nonaktifkan kontrol setelah audio selesai
-                      });
+                      // Pilih semua elemen audio dengan class 'audioPlayer'
+    var audios = document.querySelectorAll('.audioPlayer');
+
+            // Loop melalui setiap elemen audio
+            audios.forEach(function(audio) {
+                audio.addEventListener('play', function() {
+                    if (audio.played.length > 0) {
+                        Swal.fire({
+                            icon: "warning",
+                            title: "Hanya Sekali",
+                            text: "Audio Hanya Bisa Diputar Sekali"
+                        });
+                        audio.pause();  // Hentikan audio
+                        audio.currentTime = 0;  // Reset posisi audio ke awal
+                    }
+                });
+
+    audio.addEventListener('ended', function() {
+        audio.controls = false;  // Nonaktifkan kontrol setelah audio selesai
+    });
+});
   
         </script>
       @endif

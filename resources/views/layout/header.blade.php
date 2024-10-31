@@ -51,15 +51,15 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="index.html#about">Profil Sekolah</a></li>
-          <li><a href="/TourSekolah">Tour 3D</a></li>
-          <li class="dropdown"><a href="#"><span>Asset Sekolah</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="/profileSekolah">Profil Sekolah</a></li>
+          <li><a href="/TourSekolah">Tour Sekolah</a></li>
+          {{-- <li class="dropdown"><a href="#"><span>Asset Sekolah</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Gallery</a></li>
               <li><a href="#">Video</a></li>
         
             </ul>
-          </li>
+          </li> --}}
           @guest
           <li><a href="/login">Games</a></li>
               @else

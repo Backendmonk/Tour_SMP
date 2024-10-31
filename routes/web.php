@@ -34,6 +34,12 @@ Route::get('/TourSekolah',function(){
 });
 
 
+Route::get('/profileSekolah',function(){
+    return view('UserUmum.ProfileSekolah');
+});
+
+
+
 
 //user controller untuk CRUD USER
 Route::controller(UsersController::class)->group(function(){
@@ -57,6 +63,7 @@ route::controller(UserUmumController::class)->middleware('userakses:Umum')->grou
         route::get('/gamestart','GameStart');
         route::post('/sumbitJawaban','SumbmitJawaban');
         route::get('/HasilSoal','HasilScoreRekap');
+        
 });
 
 
