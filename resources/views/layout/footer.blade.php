@@ -8,28 +8,24 @@
             <span class="sitename">QuickStart</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>Jl. Kesambi No. 4 Kerobokan					
+            </p>
+            <p>Kuta Utara, Badung</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>2147483647					
+            </span></p>
+            <p><strong>Email:</strong> <span>smpsatukutautara@gmail.com					
+            </span></p>
           </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
+          
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profil Sekolah</a></li>
-            <li><a href="#">Tour 3D</a></li>
-            <li><a href="#">Gallry</a></li>
-            <li><a href="#">Video</a></li>
-            <li><a href="#">Games</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/profileSekolah">Profil Sekolah</a></li>
+            <li><a href="/TourSekolah">Tour 3D</a></li>
+            {{-- <li><a href="/gamesview">Games</a></li> --}}
           </ul>
         </div>
 
