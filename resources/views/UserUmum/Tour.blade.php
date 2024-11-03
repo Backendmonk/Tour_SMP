@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('judul')
- Games
+Tour
 @endsection
 @section('isi')
 

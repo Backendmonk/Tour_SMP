@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('judul')
- Halaman Awal
+Profile Sekolah
 @endsection
 @section('isi')
 
